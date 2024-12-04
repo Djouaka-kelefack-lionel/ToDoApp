@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">To Do App</string>
+    <string name="nav_bar">Liste de Tâches</string>
+
+    /* Confirm Delete Dialog */
+
+    <string name="conf_supprimer">Confirmer la suppression</string>
+    <string name="conf_supprimer_msg">Êtes-vous sûr de vouloir supprimer cette tâche ?</string>
+    <string name="btn_suppromer">Supprimer</string>
+    <string name="btn_annuler">Annuler</string>
+
+    ToDoComponent
+
+    <string name="btn_modifier">Modifier</string>
+    <string name="toutes_msg">Toutes</string>
+    <string name="encour_msg">En cours</string>
+    <string name="termine_msg">Terminées</string>
+    <string name="add_tache">Ajouter une tâche</string>
+
+    ToDo Detail Dialog
+
+    <string name="date">dd/MM/yyyy HH:mm</string>
+    <string name="text_detail">Détails de la tâche</string>
+    <string name="text_titre">Titre</string>
+    <string name="text_description">Description</string>
+    <string name="text_statut">Statut</string>
+    <string name="text_date_creation">Créée le</string>
+    <string name="btn_fermer">Fermer</string>
+
+    Add ToDo Dialog
+
+    <string name="text_add">Nouvelle tâche</string>
+    <string name="text_modif">Modifier la tâche</string>
+    <string name="add_ajouter">Ajouter</string>
+
 </resources>

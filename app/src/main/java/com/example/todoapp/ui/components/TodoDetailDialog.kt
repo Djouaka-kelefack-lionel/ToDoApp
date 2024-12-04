@@ -4,8 +4,10 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.example.todoapp.R
 import com.example.todoapp.data.TodoItem
 import java.text.SimpleDateFormat
 import java.util.*
@@ -16,13 +18,13 @@ fun TodoDetailDialog(
     onDismiss: () -> Unit,
     onEdit: () -> Unit
 ) {
-    val dateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
+    val dateFormat = SimpleDateFormat( stringResource(id = R.string.date), Locale.getDefault())
 
     AlertDialog(
         onDismissRequest = onDismiss,
         title = {
             Text(
-                text = "Détails de la tâche",
+                text = stringResource(R.string.text_detail),
                 style = MaterialTheme.typography.titleLarge
             )
         },
@@ -62,12 +64,12 @@ fun TodoDetailDialog(
 
                 Column {
                     Text(
-                        text = "Statut",
+                        text = stringResource(R.string.text_statut),
                         style = MaterialTheme.typography.labelMedium,
                         color = MaterialTheme.colorScheme.primary
                     )
                     Text(
-                        text = if (todo.isCompleted) "Terminée" else "En cours",
+                        text = if (todo.isCompleted) stringResource(R.string.termine_msg) else stringResource(R.string.encour_msg),
                         style = MaterialTheme.typography.bodyMedium,
                         color = if (todo.isCompleted) 
                             MaterialTheme.colorScheme.primary 
@@ -78,7 +80,7 @@ fun TodoDetailDialog(
 
                 Column {
                     Text(
-                        text = "Créée le",
+                        text = stringResource(R.string.text_date_creation),
                         style = MaterialTheme.typography.labelMedium,
                         color = MaterialTheme.colorScheme.primary
                     )
@@ -91,12 +93,12 @@ fun TodoDetailDialog(
         },
         confirmButton = {
             TextButton(onClick = onEdit) {
-                Text("Modifier")
+                Text( stringResource(R.string.btn_modifier))
             }
         },
         dismissButton = {
             TextButton(onClick = onDismiss) {
-                Text("Fermer")
+                Text( stringResource(R.string.btn_fermer))
             }
         }
     )

@@ -28,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.res.stringResource
 import com.example.todoapp.data.TodoFilter
 import com.example.todoapp.data.TodoItem
 import com.example.todoapp.data.TodoState
@@ -127,7 +128,7 @@ fun TodoTopBar() {
     TopAppBar(
         title = {
             Text(
-                "Liste de Tâches",
+                text = stringResource(id = R.string.nav_bar),
                 style = MaterialTheme.typography.titleLarge.copy(
                     fontWeight = FontWeight.Bold
                 )

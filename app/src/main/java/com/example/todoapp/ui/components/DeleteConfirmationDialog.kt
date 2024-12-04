@@ -4,6 +4,8 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
+import com.example.todoapp.R
 
 @Composable
 fun DeleteConfirmationDialog(
@@ -12,8 +14,8 @@ fun DeleteConfirmationDialog(
 ) {
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text("Confirmer la suppression") },
-        text = { Text("Êtes-vous sûr de vouloir supprimer cette tâche ?") },
+        title = { Text( stringResource(R.string.conf_supprimer)) },
+        text = { Text( stringResource(R.string.conf_supprimer_msg)) },
         confirmButton = {
             TextButton(
                 onClick = {
@@ -21,12 +23,12 @@ fun DeleteConfirmationDialog(
                     onDismiss()
                 }
             ) {
-                Text("Supprimer")
+                Text( stringResource(R.string.btn_suppromer))
             }
         },
         dismissButton = {
             TextButton(onClick = onDismiss) {
-                Text("Annuler")
+                Text( stringResource(R.string.btn_annuler))
             }
         }
     )

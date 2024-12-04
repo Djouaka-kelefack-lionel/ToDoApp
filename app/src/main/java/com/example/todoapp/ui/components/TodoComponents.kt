@@ -30,9 +30,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.example.todoapp.R
 import com.example.todoapp.data.TodoFilter
 import com.example.todoapp.data.TodoItem
 
@@ -104,7 +106,7 @@ fun TodoItem(
                 ) {
                     Icon(
                         Icons.Default.Edit,
-                        contentDescription = "Modifier",
+                        contentDescription = stringResource(id = R.string.btn_modifier),
                         tint = MaterialTheme.colorScheme.primary
                     )
                 }
@@ -114,7 +116,7 @@ fun TodoItem(
                 ) {
                     Icon(
                         Icons.Default.Delete,
-                        contentDescription = "Supprimer",
+                        contentDescription = stringResource(id = R.string.btn_suppromer),
                         tint = MaterialTheme.colorScheme.error
                     )
                 }
@@ -138,7 +140,7 @@ fun FilterChips(
         FilterChip(
             selected = selectedFilter == TodoFilter.All,
             onClick = { onFilterSelected(TodoFilter.All) },
-            label = { Text("Toutes") },
+            label = { Text(stringResource(R.string.toutes_msg))  },
             leadingIcon = if (selectedFilter == TodoFilter.All) {
                 { Icon(Icons.Default.Check, contentDescription = null) }
             } else null
@@ -146,7 +148,7 @@ fun FilterChips(
         FilterChip(
             selected = selectedFilter == TodoFilter.Active,
             onClick = { onFilterSelected(TodoFilter.Active) },
-            label = { Text("En cours") },
+            label = { Text(stringResource(R.string.encour_msg))  },
             leadingIcon = if (selectedFilter == TodoFilter.Active) {
                 { Icon(Icons.Default.Check, contentDescription = null) }
             } else null
@@ -154,7 +156,7 @@ fun FilterChips(
         FilterChip(
             selected = selectedFilter == TodoFilter.Completed,
             onClick = { onFilterSelected(TodoFilter.Completed) },
-            label = { Text("Terminées") },
+            label = { Text(stringResource(R.string.termine_msg))},
             leadingIcon = if (selectedFilter == TodoFilter.Completed) {
                 { Icon(Icons.Default.Check, contentDescription = null) }
             } else null
@@ -176,7 +178,7 @@ fun AddTodoFab(onAdd: () -> Unit) {
     ) {
         Icon(
             Icons.Default.Add,
-            contentDescription = "Ajouter une tâche",
+            contentDescription = stringResource(id = R.string.add_tache),
             modifier = Modifier.size(24.dp)
         )
     }

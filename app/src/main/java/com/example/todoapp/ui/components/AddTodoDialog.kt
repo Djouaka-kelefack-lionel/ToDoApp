@@ -16,7 +16,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.todoapp.R
 import com.example.todoapp.data.TodoItem
 
 @Composable
@@ -30,7 +32,7 @@ fun TodoDialog(
 
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(if (todoToEdit == null) "Nouvelle tâche" else "Modifier la tâche") },
+        title = { Text(if (todoToEdit == null) stringResource(R.string.text_add) else stringResource(R.string.text_modif)) },
         text = {
             Column(
                 modifier = Modifier
@@ -40,14 +42,14 @@ fun TodoDialog(
                 OutlinedTextField(
                     value = title,
                     onValueChange = { title = it },
-                    label = { Text("Titre") },
+                    label = { Text( stringResource(R.string.text_titre)) },
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 OutlinedTextField(
                     value = description,
                     onValueChange = { description = it },
-                    label = { Text("Description") },
+                    label = { Text( stringResource(R.string.text_description)) },
                     modifier = Modifier.fillMaxWidth()
                 )
             }
@@ -62,12 +64,12 @@ fun TodoDialog(
                 },
                 enabled = title.isNotBlank()
             ) {
-                Text(if (todoToEdit == null) "Ajouter" else "Modifier")
+                Text(if (todoToEdit == null) stringResource(R.string.add_ajouter) else stringResource(R.string.text_modif))
             }
         },
         dismissButton = {
             TextButton(onClick = onDismiss) {
-                Text("Annuler")
+                Text( stringResource(R.string.btn_annuler))
             }
         }
     )
